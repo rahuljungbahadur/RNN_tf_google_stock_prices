@@ -80,8 +80,19 @@ regressor.compile(optimizer = 'adam', loss = 'mean_squared_error')
 ##Fitting the RNN
 
 regressor.fit(X_train, y_train, batch_size = 32, epochs = 100)
+##saving the model
+regressor.save(filepath = "RNN_tf_google_stock_prices.h5")
 
 ##Making predictions and visualizing the results
+
+##Getting the test set for prices in 2017
+
+test_set = pd.read_csv("Google_Stock_Price_Test.csv")
+real_stock_price = test_set.iloc[:,1:2]
+
+
+##getting the predicted stock prices
+
 
 
 ##
